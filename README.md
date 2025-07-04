@@ -8,7 +8,7 @@ This project is a basic MVC CRUD application using **ASP.NET Core 3.1**, **Entit
 - [.NET Core SDK 3.1](https://dotnet.microsoft.com/download/dotnet-core/3.1)
 - [Docker](https://www.docker.com/products/docker-desktop)
 
-### 🔧 Run with Docker Compose
+### 🐳 Run with Docker Compose
 
 1. Clone the repository:
    ```bash
@@ -53,6 +53,19 @@ UserCrudApp/
 - Form validation
 - SQL Server with Docker
 - Razor Views and layout with navigation
+
+### ⚠️ Important: entrypoint.sh line endings
+If you're cloning this project on Windows, ensure the entrypoint.sh script uses LF (Unix-style) line endings:
+- Open the file entrypoint.sh in VSCode
+- In the bottom-right corner, click CRLF and change it to LF
+- Save the file
+If you don't do this, you might get the following error when running the container:
+   
+   ```bash
+   exec ./entrypoint.sh: no such file or directory
+   ```
+   
+This happens because Linux cannot parse scripts saved with Windows-style line endings.
 
 ### 🛠️ Troubleshooting
 - Make sure ports 1433 (SQL Server) and 5000 (WebApp) are not in use.

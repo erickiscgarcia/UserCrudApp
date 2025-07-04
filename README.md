@@ -36,9 +36,9 @@ This project is a basic MVC CRUD application using **ASP.NET Core 3.1**, **Entit
 ```text
 UserCrudApp/
 ├── docker-compose.yml        # Orchestrates app + DB
+├── entrypoint.sh          # Migration + startup script
 ├── WebApp/                   # ASP.NET Core MVC App
 │   ├── Dockerfile            # Docker config for WebApp
-│   ├── entrypoint.sh          # Migration + startup script
 │   ├── Controllers/          # MVC Controllers
 │   ├── Models/               # EF Entities
 │   ├── Views/                # Razor Views
@@ -57,11 +57,11 @@ UserCrudApp/
 ### 🛠️ Troubleshooting
 - Make sure ports 1433 (SQL Server) and 5000 (WebApp) are not in use.
 - If you change the database name or user/password, also update:
-- - docker-compose.yml
-- - WebApp/appsettings.json
+  - docker-compose.yml
+  - WebApp/appsettings.json
 - If you want to run the app locally (without Docker), you need:
-- - dotnet ef database update
-- - dotnet run --project WebApp
+  - dotnet ef database update
+  - dotnet run --project WebApp
 
 But make sure a local SQL Server instance is running and reachable.
 
